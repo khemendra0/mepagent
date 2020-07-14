@@ -17,11 +17,8 @@
 package service
 
 import (
-	"errors"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
-	"net/http"
-	"strings"
 	"github.com/khemendra0/mepagent/pkg/model"
 )
 
@@ -42,7 +39,7 @@ func GetConf(path string) (model.AppInstanceInfo, error) {
 	return info, nil
 }
 
-func GetAppConf(FilePath string) (model.appconf, error) {
+func GetAppConf(FilePath string) (model.AppConf, error) {
 	var Appinfo model.AppConf
 	yamlFile, err := ioutil.ReadFile(FilePath)
 	if err != nil {

@@ -25,7 +25,6 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"github.com/khemendra0/mepagent/pkg/model"
 )
 
 // const
@@ -133,14 +132,14 @@ func TlsConfig() (*tls.Config, error) {
 func getcipher(ciphers string) []uint16 {
 	ciphersmap := make([]uint16, 0)
 	cipherlist := strings.Split(ciphers, ",")
-	for ciphername := range cipherlist {
+	for _, ciphername := range cipherlist {
 		ciphernametrim := strings.TrimSpace(ciphername)
 		if len(ciphernametrim) == 0 {
 			continue
 		}
 
 		ciphervalue, ok := cipherSuiteMap[ciphernametrim]
-		if ok != nil {
+		if !ok {
 			log.Println("not recommended cipher")
 			return nil
 		}
