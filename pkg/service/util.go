@@ -22,7 +22,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
-	"github.com/akraino-edge-stack/ealt-edge/mep/mepagent/pkg/model"
+	"github.com/khemendra0/mepagent/pkg/model"
 )
 
 // get yaml and parse to struct

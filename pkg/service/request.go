@@ -25,7 +25,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"github.com/akraino-edge-stack/ealt-edge/mep/mepagent/pkg/model"
+	"github.com/khemendra0/mepagent/pkg/model"
 )
 
 // const

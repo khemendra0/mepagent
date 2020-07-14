@@ -17,7 +17,7 @@
 package main
 
 import (
-	"github.com/akraino-edge-stack/ealt-edge/mep/mepagent/pkg/service"
+	"github.com/khemendra0/mepagent/pkg/service"
 )
 
 func main() {
