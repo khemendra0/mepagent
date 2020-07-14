@@ -88,7 +88,7 @@ func DoRegister(req *http.Request) (*http.Response, error) {
 	}
 
 	trans := &http.Transport{
-		TLSClientConfig: config
+		TLSClientConfig: config,
 	}
 
 	client := http.Client{Transport: trans}
@@ -123,15 +123,15 @@ func TlsConfig() (*tls.Config, error) {
 	}
 
 	return &tls.Config{
-		RootCAs: CACERT
+		RootCAs: CACERT,
 		ServerName:   os.Getenv("CA_CERT_DOMAIN_NAME"),
-		CipherSuites: ciphermap
-		MinVersion: tls.VersionTLS12
+		CipherSuites: ciphermap,
+		MinVersion: tls.VersionTLS12,
 	}, nil
 }
 
 func getcipher(ciphers string) []uint16 {
-	ciphersmap := map([]uint16, 0)
+	ciphersmap := make([]uint16, 0)
 	cipherlist := strings.Split(ciphers, ",")
 	for ciphername := range cipherlist {
 		ciphernametrim := strings.TrimSpace(ciphername)
