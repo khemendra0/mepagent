@@ -43,7 +43,7 @@ func GetConf(path string) (model.AppInstanceInfo, error) {
 }
 
 func GetAppConf(FilePath string) (model.appconf, error) {
-	var Appinfo model.appconf
+	var Appinfo model.AppConf
 	yamlFile, err := ioutil.ReadFile(FilePath)
 	if err != nil {
 		return nil, err

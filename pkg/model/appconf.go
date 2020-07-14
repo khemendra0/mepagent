@@ -16,6 +16,6 @@
 
 package model
 
-type appconf struct {
+type AppConf struct {
 	SslCipherSuite string `yaml:"sslCiphers" json:"sslCiphers"`
 }
